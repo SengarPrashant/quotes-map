@@ -30,7 +30,7 @@ export const theme = createTheme(spaceTheme, {
             styleOverrides: {
                 root: {
                     textTransform: 'none',
-                    fontWeight: 'bold'
+                    //fontWeight: 'bold'
                 }
             }
         }

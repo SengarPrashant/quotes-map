@@ -124,7 +124,7 @@ export const AddToolTip = (map) => {
             tooltipElement.innerHTML = postalcode; // Set tooltip text here
             tooltipElement.classList.remove('ol-tooltip-hidden');
         } else {
-           tooltipElement.classList.add('ol-tooltip-hidden');
+            tooltipElement.classList.add('ol-tooltip-hidden');
         }
     });
 
@@ -148,4 +148,30 @@ export const AddToolTip = (map) => {
             }
             `;
     document.head.appendChild(style);
+}
+
+
+export const AddBookACallModal = (map, setBookCallDialog) => {
+    map.on('click', function (event) {
+        const feature = map.forEachFeatureAtPixel(event.pixel, function (feat) {
+            return feat;
+        });
+        if (feature) {
+            const featureData = feature.get('meta');
+            const coordinates = feature.getGeometry().getCoordinates();
+            const _state = { open: true, data: featureData, position: event.pixel_ };
+            setBookCallDialog(_state)
+        } else {
+            setBookCallDialog({ open: false, data: {}, position: [-200, 0] });
+        }
+    });
+}
+
+export const MapMoveEvent = (map,setBookCallDialog) => {
+    map.on('moveend', function (event) {
+        const view = map.getView();
+        const zoom = view.getZoom(); // Get the zoom level
+        const center = view.getCenter(); // Get the center coordinates
+        setBookCallDialog({ open: false, data: {}, position: [-200, 0] });
+    });
 }
