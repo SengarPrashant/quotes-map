@@ -1,0 +1,45 @@
+.gap-1{
+    gap: 8px;
+  }
+  .tl{
+    position: absolute;
+    left: 16px; top: 8px;
+  }
+  .tr{
+    position: absolute;
+    right: 16px; top: 8px;
+  }
+  .content-h{
+    height: calc(100lvh - $headerHeight - ($bodySpacing));
+  }
+  .h-flex{
+    display: flex;
+    justify-content: center;
+  }
+  .l-flex{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+  .c-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .r-flex{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+  .lr-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mb-1{
+    margin-bottom: 8px;
+  }
+  .mb-2{
+    margin-bottom: 16px;
+  }
