@@ -30,6 +30,8 @@ body {
 @media (max-width: 1024px) {
   .floatingQuoteSearch {
     top: $headerHeight * 1;
+    width: 100%;
+    left: calc(50% - 218px);
     background-color: white;
     padding-bottom: 8px;
   }
