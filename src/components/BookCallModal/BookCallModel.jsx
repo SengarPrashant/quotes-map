@@ -7,16 +7,16 @@ const BookCallModel = ({ data, onClose, popupPosition = [0, 0] }) => {
     return (
         <div className='bookCallPopup' style={{ left: `${popupPosition[0] - 150}px`, top: `${popupPosition[1] - 150}px` }}>
             <Card>
-                <Box sx={{ width: 300, p:2}}>
+                <Box sx={{ width: 300, p: 2 }}>
                     <Box className="lr-flex">
-                        <Box>
+                        <Box sx={{flexGrow:1}}>
                             Title
                         </Box>
-                        <IconButton onClick={onClose} sx={{ p: 0.5 }} size='small'>
+                        <IconButton onClick={onClose} sx={{ p: 0.5 }} size='small' className='cross'>
                             <CloseIcon />
                         </IconButton>
                     </Box>
-                    <Box sx={{py:2}}>
+                    <Box sx={{ py: 2 }}>
                         content
                         {JSON.stringify(data)}
                     </Box>

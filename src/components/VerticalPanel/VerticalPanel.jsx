@@ -18,7 +18,7 @@ const VerticalPanel = ({ title, children, expanded, onToggle }) => {
                 </div>
                 <Button variant='text' sx={{ p: 0.5 }} onClick={onToggle} 
                 endIcon={expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}>
-                   Hide
+                  {expanded ? 'Hide' : 'Show'}
                 </Button>
             </div>
             <Box className={expanded ? "content-expanded" : "content"}>
